@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Products</title>
+    <link rel="stylesheet" href="navbar.html"> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 15px;
+            padding: 10px;
+            text-align: center;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <main id="product-list"></main>
+    <footer>
+        <p>&copy; 2024 iPhone Product Showcase</p>
+    </footer>
+    <script>
+        const products = [
+            {
+                name: "iPhone 14",
+                image: "https://m.media-amazon.com/images/I/619f09kK7tL._AC_UF1000,1000_QL80_.jpg",
+                price: "$799",
+                description: "The iPhone 14 features an advanced dual-camera system and a stunning display."
+            },
+            {
+                name: "iPhone 14 Pro",
+                image: "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111846_sp875-sp876-iphone14-pro-promax.png",
+                price: "$999",
+                description: "iPhone 14 Pro delivers incredible performance with the A16 Bionic chip."
+            },
+            {
+                name: "iPhone 14 Pro Max",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ7r-S0RoNejo3V1UXW45derIFieBseMFGjA&s",
+                price: "$1,099",
+                description: "The ultimate iPhone experience with a massive display and exceptional battery life."
+            },
+            {
+                name: "iPhone SE (3rd Generation)",
+                image: "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111866_sp867-iphone-se-3gen.png",
+                price: "$429",
+                description: "A compact smartphone with powerful features and the A15 chip."
+            },
+            {
+                name: "iPhone 13",
+                image: "https://iplanet.one/cdn/shop/files/iPhone_13_Green_PDP_Image_Position-1A__GBEN.jpg?v=1691170460",
+                price: "$699",
+                description: "The iPhone 13 offers improved battery life and an amazing dual-camera system."
+            },
+            {
+                name: "iPhone 13 Mini",
+                image: "https://akm-img-a-in.tosshub.com/indiatoday/images/story/202109/iPhone_13_MINI_%283%29.jpg?size=1200:675",
+                price: "$599",
+                description: "All the power of the iPhone 13 in a smaller form factor."
+            },
+            {
+                name: "iPhone 12",
+                image: "https://www.apple.com/newsroom/images/product/iphone/geo/apple_iphone-12_2-up_geo_10132020_inline.jpg.large.jpg",
+                price: "$699",
+                description: "5G capable with a super Retina XDR display and A14 Bionic chip."
+            },
+            {
+                name: "iPhone 12 Mini",
+                image: "https://5.imimg.com/data5/SELLER/Default/2023/6/312744555/BA/GM/RE/4630526/apple-iphone-12-mini-128gb-blue-mobile-phone.jpg",
+                price: "$599",
+                description: "Compact, yet powerful, featuring all the latest technology."
+            }
+        ];
+
+        function displayProducts() {
+            const productList = document.getElementById('product-list');
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product';
+                productDiv.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h2>${product.name}</h2>
+                    <p>Price: ${product.price}</p>
+                    <p>${product.description}</p>
+                `;
+                productList.appendChild(productDiv);
+            });
+        }
+
+        displayProducts();
+    </script>
+</body>
+</html>

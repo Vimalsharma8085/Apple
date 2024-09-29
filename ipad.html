@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPad Products</title>
+    <link rel="stylesheet" href="navbar.html">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 15px;
+            padding: 10px;
+            text-align: center;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>iPad Products</h1>
+    </header>
+    <main id="product-list"></main>
+    <footer>
+        <p>&copy; 2024 iPad Product Showcase</p>
+    </footer>
+    <script>
+        const products = [
+            {
+                name: "iPad Pro 11\"",
+                image: "https://images-cdn.ubuy.co.in/64c6554fa9d27852184b2e3d-2021-apple-11-inch-ipad-pro-wi-fi.jpg",
+                price: "$799",
+                description: "Powerful and portable, perfect for professionals."
+            },
+            {
+                name: "iPad Pro 12.9\"",
+                image: "https://www.poojaratele.com/media/catalog/product/cache/28b568fbf82d79c53c9eab7361be58d0/a/p/apple-ipad-pro-10p5inch-wifi-rgold-thum1.jpg",
+                price: "$1,099",
+                description: "The ultimate iPad experience with a stunning Liquid Retina display."
+            },
+            {
+                name: "iPad Air",
+                image: "https://m.media-amazon.com/images/I/61k05QwLuML._AC_UF1000,1000_QL80_.jpg",
+                price: "$599",
+                description: "Powerful, lightweight, and designed for everything you do."
+            },
+            {
+                name: "iPad",
+                image: "https://m.media-amazon.com/images/I/61uA2UVnYWL._AC_UF1000,1000_QL80_.jpg",
+                price: "$329",
+                description: "Versatile and affordable, perfect for everyday tasks."
+            },
+            {
+                name: "iPad Mini",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzUFH3y2HfAgt71jbExnzm3C7b-VMABAd0cQ&s",
+                price: "$499",
+                description: "Small in size but big on performance."
+            },
+            {
+                name: "iPad Pro 12.9\" (Latest Model)",
+                image: "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111979_ipad-pro-12-2018.png",
+                price: "$1,199",
+                description: "The most powerful iPad ever, perfect for creative tasks."
+            },
+            {
+                name: "iPad Air (Latest Model)",
+                image: "https://www.apple.com/newsroom/images/product/ipad/standard/apple_new-ipad-air_new-design_09152020.jpg.news_app_ed.jpg",
+                price: "$599",
+                description: "Redefine your productivity with powerful performance."
+            },
+            {
+                name: "iPad (Latest Model)",
+                image: "https://www.apple.com/newsroom/images/product/ipad/standard/apple_ipad-pro-spring21_hero_04202021_big.jpg.large.jpg",
+                price: "$329",
+                description: "The most affordable iPad, now even better."
+            },
+            {
+                name: "iPad Mini (Latest Model)",
+                image: "https://www.apple.com/newsroom/images/product/ipad/standard/Apple_iPad-mini_colors_09142021_big_carousel.jpg.slideshow-xlarge_2x.jpg",
+                price: "$499",
+                description: "Compact, lightweight, and ready to tackle anything."
+            }
+        ];
+
+        function displayProducts() {
+            const productList = document.getElementById('product-list');
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product';
+                productDiv.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h2>${product.name}</h2>
+                    <p>Price: ${product.price}</p>
+                    <p>${product.description}</p>
+                `;
+                productList.appendChild(productDiv);
+            });
+        }
+
+        displayProducts();
+    </script>
+</body>
+</html>

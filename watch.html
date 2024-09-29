@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Watch Products</title>
+    <link rel="stylesheet" href="navbar.html">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 15px;
+            padding: 10px;
+            text-align: center;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Apple Watch Products</h1>
+    </header>
+    <main id="product-list"></main>
+    <footer>
+        <p>&copy; 2024 Apple Watch Product Showcase</p>
+    </footer>
+    <script>
+        const products = [
+            {
+                name: "Apple Watch Series 8",
+                image: "https://www.apple.com/newsroom/images/product/watch/standard/Apple-Watch-S8-2up-hero-220907_Full-Bleed-Image.jpg.large.jpg",
+                price: "$399",
+                description: "The ultimate device for a healthy life."
+            },
+            {
+                name: "Apple Watch SE",
+                image: "https://www.apple.com/v/apple-watch-se/q/images/overview/hero/hero__f76n0zejlxqq_large.jpg",
+                price: "$249",
+                description: "All the essentials of an Apple Watch at a lower price."
+            },
+            {
+                name: "Apple Watch Ultra",
+                image: "https://www.apple.com/in/apple-watch-ultra-2/images/overview/hero/hero_endframe__ewae8bv9nsia_large.jpg",
+                price: "$799",
+                description: "Engineered for athletes and adventurers."
+            },
+            {
+                name: "Apple Watch Series 7",
+                image: "https://i.pcmag.com/imagery/reviews/06VrNbpXUX21fGAddZqEVJr-14.fit_lim.size_1050x.jpg",
+                price: "$399",
+                description: "The most durable Apple Watch ever, with a larger display."
+            },
+            {
+                name: "Apple Watch ",
+                image: "https://inventstore.in/wp-content/uploads/2023/09/3-4.webp",
+                price: "$1,249",
+                description: "A unique expression of style and elegance."
+            },
+            {
+                name: "Apple Watch Nike",
+                image: "https://www.apple.com/in/apple-watch-nike/images/meta/apple-watch-nike__faw8pf102bu6_og.png",
+                price: "$399",
+                description: "Designed for fitness enthusiasts, with exclusive Nike watch faces."
+            }
+        ];
+
+        function displayProducts() {
+            const productList = document.getElementById('product-list');
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product';
+                productDiv.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h2>${product.name}</h2>
+                    <p>Price: ${product.price}</p>
+                    <p>${product.description}</p>
+                `;
+                productList.appendChild(productDiv);
+            });
+        }
+
+        displayProducts();
+    </script>
+</body>
+</html>

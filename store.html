@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Store Project</title>
+    <link rel="stylesheet" href="navbar.html"> 
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .product {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 15px;
+            padding: 10px;
+            text-align: center;
+            width: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background-color: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Store</h1>
+    </header>
+    <main id="product-list"></main>
+    <footer>
+        <p>&copy; 2024 Store Project</p>
+    </footer>
+    <script>
+        const products = [
+            {
+                name: "MacBook Pro",
+                image: "https://cdsassets.apple.com/live/SZLF0YNV/images/sp/111955_SP715-display_mbp_13.jpg",
+                quote: "Quality is not an act, it is a habit."
+            },
+            {
+                name: "iPhone 14",
+                image: "https://image.cnbcfm.com/api/v1/image/107118102-1663119439842-IMG_29011.jpg?v=1663183051&w=1858&h=1045&vtcrop=y",
+                quote: "Success usually comes to those who are too busy to be looking for it."
+            },
+            {
+                name: "iPad Pro",
+                image: "https://cdn.mos.cms.futurecdn.net/xkJcasgAGP4Cva7A2u9Wv3.jpg",
+                quote: "Don't watch the clock; do what it does. Keep going."
+            },
+            {
+                name: "Apple Watch",
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7Z8RBdP797ofVEYmro-ISznQ53hHjZvyvdQ&s",
+                quote: "The future belongs to those who believe in the beauty of their dreams."
+            },
+            {
+                name: "AirPods",
+                image: "https://media-ik.croma.com/prod/https://media.croma.com/image/upload/v1692771141/Croma%20Assets/Entertainment/Wireless%20Earbuds/Images/262015_qwcykq.png?tr=w-600",
+                quote: "Act as if what you do makes a difference. It does."
+            }
+        ];
+
+        function displayProducts() {
+            const productList = document.getElementById('product-list');
+            products.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product';
+                productDiv.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h2>${product.name}</h2>
+                    <p>${product.quote}</p>
+                `;
+                productList.appendChild(productDiv);
+            });
+        }
+
+        displayProducts();
+    </script>
+</body>
+</html>
